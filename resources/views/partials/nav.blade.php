@@ -7,14 +7,14 @@
              <li class="nav-item @if(Route::is('home')) active @endif"> 
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Video Games</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Figurines</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Board Games</a>
-            </li> -->
+                <a href="#" class="nav-link">Adventure Books</a>
+            </li>
             <li class="nav-item @if(Route::is('dice.*')) active @endif">
-                <a href="{{ route('dice.index') }}" class="nav-link">Tabletop RPGs</a>
+                <a href="{{ route('dice.index') }}" class="nav-link">Dice</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
