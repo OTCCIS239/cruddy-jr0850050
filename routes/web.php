@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('Dice', 'DiceController');
+Route::resource('Figurine', 'FigurineController');
+Route::resource('AdvBook', 'AdventureBookController');
