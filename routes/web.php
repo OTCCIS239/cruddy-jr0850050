@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::resource('Dice', 'DiceController');
 Route::resource('Figurine', 'FigurineController');

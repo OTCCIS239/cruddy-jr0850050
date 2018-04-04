@@ -13,7 +13,7 @@ class FigurineController extends Controller
      */
     public function index()
     {
-        return view ('Figurine.index');
+        return view ('figurines.index');
     }
 
     /**
