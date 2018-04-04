@@ -13,7 +13,7 @@ class AdventureBookController extends Controller
      */
     public function index()
     {
-        return view ('advbook.index');
+        return view ('advbooks.index');
     }
 
     /**

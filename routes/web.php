@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::resource('dice', 'DiceController');
 Route::resource('figurine', 'FigurineController');
-Route::resource('advBook', 'AdventureBookController');
+Route::resource('advbooks', 'AdventureBookController');
