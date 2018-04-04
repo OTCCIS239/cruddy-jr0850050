@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::resource('Dice', 'DiceController');
-Route::resource('Figurine', 'FigurineController');
-Route::resource('AdvBook', 'AdventureBookController');
+Route::resource('dice', 'DiceController');
+Route::resource('figurine', 'FigurineController');
+Route::resource('advBook', 'AdventureBookController');
