@@ -12,8 +12,39 @@
 
     <title>Josh's DND Tavern!</title>
     <style type="text/css">
-        li.active a {
-            color: blue !important;
+                .nav-item {
+            width: 135px;  
+            display: inline-block;
+            line-height: 64px;
+            text-align: center;
+        }
+        .nav-item a {
+            border-bottom: 5px solid #eee;
+        }
+        .nav-item a:hover {
+            border-bottom: 5px solid #ddd;
+        }
+        .navbar-nav li.active a {
+            color: #000 !important;
+            border-bottom: 5px solid #ccc;
+        }
+
+        .nav-item:hover {
+            background: #eee;
+        }
+        .navbar {
+            padding-bottom:0;
+        }
+
+        a:active,
+        a:hover,
+        a:link {
+            text-decoration: none;
+            padding:0;
+        }
+
+        h1 {
+            text-align: center;
         }
     </style>
 </head>
