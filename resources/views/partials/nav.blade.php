@@ -11,7 +11,7 @@
                 <a class="nav-link" href="{{ route('figurine.index') }}">Figurines</a>
             </li>
             <li class="nav-item @if(Route::is('advbooks.*')) active @endif">
-                <a href="{{ route('advbooks.index') }}" class="nav-link">Adventure Books</a>
+                <a href="{{ route('advbooks.index') }}" class="nav-link">Books</a>
             </li>
             <li class="nav-item @if(Route::is('dice.*')) active @endif">
                 <a href="{{ route('dice.index') }}" class="nav-link">Dice</a>

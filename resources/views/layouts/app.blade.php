@@ -12,11 +12,11 @@
 
     <title>Josh's DND Tavern!</title>
     <style type="text/css">
-                .nav-item {
-            width: 135px;  
-            display: inline-block;
-            line-height: 64px;
-            text-align: center;
+        .nav-item {
+        width: 135px;  
+        display: inline-block;
+        line-height: 64px;
+        text-align: center;
         }
         .nav-item a {
             border-bottom: 5px solid #eee;
