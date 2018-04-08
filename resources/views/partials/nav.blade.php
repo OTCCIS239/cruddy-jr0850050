@@ -27,7 +27,7 @@ Copyright 2018
             <li class="nav-item @if(Route::is('clothing.*')) active @endif">
                 <a href="{{ route('clothing.index') }}" class="nav-link">Clothing</a>
             </li>
-            <li class="nav-item @if(Route::is('sticker.*')) active @endif">
+            <li class="nav-item @if(Route::is('stickers.*')) active @endif">
                 <a href="{{ route('stickers.index') }}" class="nav-link">Stickers</a>
             </li>
         </ul>
