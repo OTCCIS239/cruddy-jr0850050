@@ -45,7 +45,12 @@ class DiceController extends Controller
      */
     public function show($id)
     {
-        //
+        // get the dice
+        $dice = dice::find($id);
+
+        // show the view and pass the dice to it
+        return View::make('dice.show')
+            ->with('dice', $dice);
     }
 
     /**

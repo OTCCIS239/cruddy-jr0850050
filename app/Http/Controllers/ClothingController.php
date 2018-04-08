@@ -45,7 +45,12 @@ class ClothingController extends Controller
      */
     public function show($id)
     {
-        //
+        // get the clothing
+        $clothing = clothing::find($id);
+
+        // show the view and pass the clothing to it
+        return View::make('clothing.show')
+            ->with('clothing', $clothing);
     }
 
     /**

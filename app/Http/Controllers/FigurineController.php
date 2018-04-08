@@ -45,7 +45,12 @@ class FigurineController extends Controller
      */
     public function show($id)
     {
-        //
+        // get the figurine
+        $figurine = figurine::find($id);
+
+        // show the view and pass the figurine to it
+        return View::make('figurine.show')
+            ->with('figurine', $figurine);
     }
 
     /**

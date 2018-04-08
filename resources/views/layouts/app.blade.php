@@ -20,6 +20,8 @@ Copyright 2018
 
     <title>Josh's DND Tavern!</title>
     <style type="text/css">
+
+        /* navigation stuff! */
         .nav-item {
         width: 135px;  
         display: inline-block;

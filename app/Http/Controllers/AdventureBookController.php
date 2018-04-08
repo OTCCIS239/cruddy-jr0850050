@@ -45,7 +45,12 @@ class AdventureBookController extends Controller
      */
     public function show($id)
     {
-        //
+        // get the books
+        $book = advbook::find($id);
+
+        // show the view and pass the book to it
+        return View::make('advbook.show')
+            ->with('advbook', $book);
     }
 
     /**

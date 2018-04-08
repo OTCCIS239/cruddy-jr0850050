@@ -45,7 +45,12 @@ class StickerController extends Controller
      */
     public function show($id)
     {
-        //
+        // get the sticker
+        $sticker = stickers::find($id);
+
+        // show the view and pass the sticker to it
+        return View::make('stickers.show')
+            ->with('stickers', $sticker);
     }
 
     /**
