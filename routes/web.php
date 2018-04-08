@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('dice', 'DiceController');
 Route::resource('figurine', 'FigurineController');
 Route::resource('advbooks', 'AdventureBookController');
+Route::resource('clothing', 'ClothingController');
+Route::resource('stickers', 'StickerController');

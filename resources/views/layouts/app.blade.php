@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 
+<!-- *******************************
+Page: Main page constructor!
+Author: Joshua Ratliff
+Date of Creation: 04/07/2018
+Copyright 2018
+ ***********************************-->
+
+<!-- This page is used to create a framework for all pages on the website! -->
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,8 +20,41 @@
 
     <title>Josh's DND Tavern!</title>
     <style type="text/css">
-        li.active a {
-            color: blue !important;
+        .nav-item {
+        width: 135px;  
+        display: inline-block;
+        line-height: 64px;
+        text-align: center;
+        }
+        .nav-item a {
+            border-bottom: 5px solid #eee;
+            
+        }
+        .nav-item a:hover {
+            border-bottom: 5px solid #ddd;
+        }
+        .navbar-nav li.active a {
+            color: #000!important;
+            border-bottom: 5px solid #ccc;
+            border-color: #94baf7;
+        }
+
+        .nav-item:hover {
+            background: #eee;
+        }
+        .navbar {
+            padding-bottom:0;
+        }
+
+        a:active,
+        a:hover,
+        a:link {
+            text-decoration: none;
+            padding:0;
+        }
+
+        h1 {
+            text-align: center;
         }
     </style>
 </head>
