@@ -8,4 +8,20 @@ Copyright 2018
 
 @section('content')
     <h1>Customize your gear with our line of expressive stickers!</h1>
+
+        <style type="text/css">
+        #link-container {
+            text-align: center;
+        }
+        #link {
+            background: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+        }
+        </style>
+
+    <div id="link-container">
+    <a href="{{ URL::route('stickers.create') }}" class="btn btn-default" id='link'> Add a new sticker! </a>
+    </div>
 @stop
