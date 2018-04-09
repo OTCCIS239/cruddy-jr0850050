@@ -23,7 +23,7 @@ class DiceController extends Controller
      */
     public function create()
     {
-        //
+        return view ('dice.create');
     }
 
     /**

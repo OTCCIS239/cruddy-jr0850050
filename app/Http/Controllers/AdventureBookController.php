@@ -23,7 +23,7 @@ class AdventureBookController extends Controller
      */
     public function create()
     {
-        //
+        return view ('advbooks.create');
     }
 
     /**

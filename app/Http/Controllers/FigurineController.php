@@ -23,7 +23,7 @@ class FigurineController extends Controller
      */
     public function create()
     {
-        //
+        return view ('figurines.create');
     }
 
     /**
