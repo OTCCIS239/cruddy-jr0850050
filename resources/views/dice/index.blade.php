@@ -21,7 +21,40 @@ Copyright 2018
         }
         </style>
 
-    <div id="link-container">
-    <a href="{{ URL::route('dice.create') }}" class="btn btn-default" id='link'> Add some new dice! </a>
-    </div>
+       <div class="panel">
+        <div class="panel-heading">
+            <a href="/guitars/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <h3 class="panel-title">Browse all products</h3>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>Number of Faces</th>
+                    <th>Material</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th style="width: 1px; white-space: nowrap;">
+                        <i class="fa fa-cog"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($dice as $dice)
+                    <tr>
+                        <td>{{ $dice->id }}</td>
+                        <td>{{ $dice->name }}</td>
+                        <td>{{ $dice->material }}</td>
+                        <td>{{ $dice->description }}</td>
+                        <td>{{ $dice->price }}</td>
+                        <td>
+                            <a href="/dice/{{ $dice->id }}/edit" class="btn btn-xs btn-info">
+                                <i class="fa fa-edit"></i>
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 @stop

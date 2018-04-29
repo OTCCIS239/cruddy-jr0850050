@@ -23,7 +23,7 @@ Copyright 2018
 
               <div class="panel">
         <div class="panel-heading">
-            <a href="/guitars/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <a href="/figurines/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
             <h3 class="panel-title">Browse all products</h3>
         </div>
         <table class="table table-striped table-hover">

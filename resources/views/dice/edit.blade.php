@@ -1,69 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Table V05</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- *******************************
+Page: Dice edit page!
+Author: Joshua Ratliff
+Date of Creation: 04/07/2018
+Copyright 2018
+ ***********************************-->
+ @extends('layouts.app')
 
-  <link rel="stylesheet" type="text/css" href="/css/one-page-wonder.css">
-  <link rel="stylesheet" type="text/css" href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
+@section('content')
+
+        <style type="text/css">
+        #link-container {
+            text-align: center;
+        }
+        #link {
+            background: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+        }
+        </style>
 
 
-<!-- Custom fonts for this template -->
-<link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-</head>
-
- <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('guitars.index') }}">Browse items</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('orders.index') }}">Browse orders</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <style type="text/css">
+        #link-container {
+            text-align: center;
+        }
+        #link {
+            background: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+        }
+        </style>
 
     <div class="panel">
     <div class="panel-heading">
         <h3 class="panel-title">Edit item</h3>
     </div>
     <div class="panel-body">
-        <form action="/guitars/{{ $product->productID }}" method="post">
+        <form action="/dice/{{ $dice->id }}" method="post">
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             
                 <div class="form-group">
-                    <label for="categoryID">CategoryID</label>
-                    <input type="number" name="categoryID" value="{{ @$product ? $product->categoryID : '' }}" class="form-control">
+                    <label for="name">Dice name</label>
+                    <input type="text" name="name" value="{{ @$dice ? $dice->name : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="productCode">Product Code</label>
-                    <input type="text" name="productCode" value="{{ @$product ? $product->productCode : '' }}" class="form-control">
+                    <label for="material">Material</label>
+                    <input type="text" name="material" value="{{ @$dice ? $dice->material : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="productName">Product Name</label>
-                    <input type="textr" name="productName" value="{{ @$product ? $product->productName : '' }}" class="form-control">
+                    <label for="description">Description</label>
+                    <input type="text" name="material" value="{{ @$dice ? $dice->description : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="listPrice">List Price</label>
-                    <input type="number" name="listPrice" value="{{ @$product ? $product->listPrice : '' }}" class="form-control">
+                    <label for="price">List Price</label>
+                    <input type="number" name="price" value="{{ @$dice ? $dice->price : '' }}" class="form-control">
                 </div>
 
             <button class="btn btn-primary pull-right">Save item</button>
@@ -71,5 +67,5 @@
 
     
     </div>
-</div>
-</html>
+    </div>
+@stop
