@@ -18,8 +18,8 @@ Copyright 2018
             <li class="nav-item @if(Route::is('figurine.*')) active @endif">
                 <a class="nav-link" href="{{ route('figurine.index') }}">Figurines</a>
             </li>
-            <li class="nav-item @if(Route::is('advbooks.*')) active @endif">
-                <a href="{{ route('advbooks.index') }}" class="nav-link">Books</a>
+            <li class="nav-item @if(Route::is('book.*')) active @endif">
+                <a href="{{ route('book.index') }}" class="nav-link">Books</a>
             </li>
             <li class="nav-item @if(Route::is('dice.*')) active @endif">
                 <a href="{{ route('dice.index') }}" class="nav-link">Dice</a>
