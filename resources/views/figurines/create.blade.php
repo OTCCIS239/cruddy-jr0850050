@@ -1,5 +1,5 @@
 <!-- *******************************
-Page: Books page!
+Page: Figurines Create page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018

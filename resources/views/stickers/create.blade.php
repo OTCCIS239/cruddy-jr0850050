@@ -1,37 +1,59 @@
 <!-- *******************************
-Page: Books page!
+Page: stickers Create page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
  ***********************************-->
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
-<h1>ADMIN: Add a new sticker!</h1>
-<div class="container">
-  <form>
-    <div class="form-group row">
-      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Item Name</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Item Name" name="ItemName">
-      </div>
+<h1>ADMIN: Add a sticker</h1>
+
+        <style type="text/css">
+        #link-container {
+            text-align: center;
+        }
+        #link {
+            background: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+        }
+        </style>
+
+    <div class="panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">Create item</h3>
     </div>
-    <div class="form-group row">
-    <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Item Description</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="describe the item" name="ItemDescription">
-      </div>
+    <div class="panel-body">
+        <form action="/stickers/{{ $sticker->id }}" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            {{ csrf_field() }}
+            
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="{{ @$sticker ? $sticker->name : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="artist">Artist</label>
+                    <input type="text" name="artist" value="{{ @$sticker ? $sticker->artist : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="material" value="{{ @$sticker ? $sticker->description : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">List Price</label>
+                    <input type="number" name="price" value="{{ @$sticker ? $sticker->price : '' }}" class="form-control">
+                </div>
+
+            <button class="btn btn-primary pull-right">Save item</button>
+        </form>
+
+    
     </div>
-    <div class="form-group row">
-      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Item Price</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="List the price" name="ItemPrice">
-      </div>
     </div>
-    <div class="form-group row">
-      <div class="col-md-2"></div>
-      <input type="submit" class="btn btn-primary">
-    </div>
-  </form>
-</div>
 @stop

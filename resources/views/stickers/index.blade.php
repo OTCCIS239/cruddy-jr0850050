@@ -1,13 +1,13 @@
 <!-- *******************************
-Page: Stickers page!
+Page: Figurines page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
  ***********************************-->
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
-    <h1>Customize your gear with our line of expressive stickers!</h1>
+    <h1>Browse our catalog of figurines to find your next hero!</h1>
 
         <style type="text/css">
         #link-container {
@@ -21,7 +21,39 @@ Copyright 2018
         }
         </style>
 
-    <div id="link-container">
-    <a href="{{ URL::route('stickers.create') }}" class="btn btn-default" id='link'> Add a new sticker! </a>
-    </div>
+              <div class="panel">
+        <div class="panel-heading">
+            <a href="/stickers/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th style="width: 1px; white-space: nowrap;">
+                        <i class="fa fa-cog"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($stickers as $sticker)
+                    <tr>
+                        <td>{{ $sticker->id }}</td>
+                        <td>{{ $sticker->name }}</td>
+                        <td>{{ $sticker->artist }}</td>
+                        <td>{{ $sticker->description }}</td>
+                        <td>{{ $sticker->price }}</td>
+                        <td>
+                            <a href="/stickers/{{ $sticker->id }}/edit" class="btn btn-xs btn-info">
+                                <i class="fa fa-edit"></i>
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 @stop
