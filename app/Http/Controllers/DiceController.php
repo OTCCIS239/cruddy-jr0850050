@@ -6,9 +6,6 @@ use Illuminate\Http\Request;
 
 class DiceController extends Controller
 {
-<<<<<<< HEAD
-    //
-=======
     /**
      * Display a listing of the resource.
      *
@@ -89,5 +86,4 @@ class DiceController extends Controller
     {
         //
     }
->>>>>>> 131c5ba0133bf254b2a46ffb05813332d467113d
 }
