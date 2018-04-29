@@ -1,5 +1,5 @@
 <!-- *******************************
-Page: Figurines page!
+Page: stickers page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
@@ -7,7 +7,7 @@ Copyright 2018
  @extends('layouts.app')
 
 @section('content')
-    <h1>Browse our catalog of figurines to find your next hero!</h1>
+    <h1>Customize your gear with some of our stickers!</h1>
 
         <style type="text/css">
         #link-container {

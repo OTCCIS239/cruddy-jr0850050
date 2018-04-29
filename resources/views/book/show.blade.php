@@ -1,15 +1,26 @@
-<!-- *******************************
-Page: advbook Show Page!
+<!--***********************************
+Page: Show books Page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
  ***********************************-->
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
-<h1>Showing Books</h1>
+<h1>Showing books</h1>
 
-<div class="jumbotron text-center">
-    <p>aaaaaaaaaaaaaaaaaaaaaaa</p>
+{{ $book->toJson() }}
+
+<form action="/book/{{ $book->id }}" method="post">
+ <input type="hidden" name="_method" value="delete">
+ {{ csrf_field() }}
+
+ <button class="btn btn-danger">
+     <i class="fa fa-trash-o"></i>
+ </button>
+</form>
+
+
+</div>
 </div>
 @stop

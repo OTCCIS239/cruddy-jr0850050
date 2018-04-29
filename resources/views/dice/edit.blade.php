@@ -54,7 +54,7 @@ Copyright 2018
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" name="material" value="{{ @$dice ? $dice->description : '' }}" class="form-control">
+                    <input type="text" name="description" value="{{ @$dice ? $dice->description : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">

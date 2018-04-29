@@ -1,37 +1,58 @@
 <!-- *******************************
-Page: Books page!
+Page: book create page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
  ***********************************-->
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
-<h1>ADMIN: Add a new book!</h1>
-<div class="container">
-  <form>
-    <div class="form-group row">
-      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Item Name</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Item Name" name="ItemName">
-      </div>
+
+        <style type="text/css">
+        #link-container {
+            text-align: center;
+        }
+        #link {
+            background: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+        }
+        </style>
+
+    <div class="panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">Create item</h3>
     </div>
-    <div class="form-group row">
-    <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Item Description</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="describe the item" name="ItemDescription">
-      </div>
+    <div class="panel-body">
+      <form action="/book/{{ $book->id }}" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            {{ csrf_field() }}
+            
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="{{ @$book ? $book->name : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input type="text" name="type" value="{{ @$book ? $book->type : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" value="{{ @$book ? $book->description : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">List Price</label>
+                    <input type="number" name="price" value="{{ @$book ? $book->price : '' }}" class="form-control">
+                </div>
+
+            <button class="btn btn-primary pull-right">Save item</button>
+        </form>
+
+    
     </div>
-    <div class="form-group row">
-      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Item Price</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="List the price" name="ItemPrice">
-      </div>
     </div>
-    <div class="form-group row">
-      <div class="col-md-2"></div>
-      <input type="submit" class="btn btn-primary">
-    </div>
-  </form>
-</div>
 @stop

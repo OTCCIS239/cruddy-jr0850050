@@ -7,7 +7,7 @@ Copyright 2018
  @extends('layouts.app')
 
 @section('content')
-<h1>Showing Figurine</h1>
+<h1>Showing stickers</h1>
 
 {{ $stickers->toJson() }}
 
