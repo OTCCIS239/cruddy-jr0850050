@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FigurineController extends Controller
+class StickerController extends Controller
 {
-<<<<<<< HEAD
-    //
-=======
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +13,7 @@ class FigurineController extends Controller
      */
     public function index()
     {
-        return view ('figurines.index');
+        return view ('stickers.index');
     }
 
     /**
@@ -26,7 +23,7 @@ class FigurineController extends Controller
      */
     public function create()
     {
-        return view ('figurines.create');
+        return view ('stickers.create');
     }
 
     /**
@@ -48,12 +45,12 @@ class FigurineController extends Controller
      */
     public function show($id)
     {
-        // get the figurine
-        $figurine = figurine::find($id);
+        // get the sticker
+        $sticker = stickers::find($id);
 
-        // show the view and pass the figurine to it
-        return View::make('figurine.show')
-            ->with('figurine', $figurine);
+        // show the view and pass the sticker to it
+        return View::make('stickers.show')
+            ->with('stickers', $sticker);
     }
 
     /**
@@ -89,5 +86,4 @@ class FigurineController extends Controller
     {
         //
     }
->>>>>>> 131c5ba0133bf254b2a46ffb05813332d467113d
 }

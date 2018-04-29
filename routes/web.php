@@ -13,8 +13,10 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::resource('Dice', 'DiceController');
-Route::resource('Figurine', 'FigurineController');
-Route::resource('Book', 'BookController');
+Route::resource('dice', 'DiceController');
+Route::resource('figurine', 'FigurineController');
+Route::resource('advbooks', 'AdventureBookController');
+Route::resource('clothing', 'ClothingController');
+Route::resource('stickers', 'StickerController');
