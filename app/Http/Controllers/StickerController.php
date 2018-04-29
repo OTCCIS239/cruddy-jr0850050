@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sticker;
 
 class StickerController extends Controller
 {
@@ -13,7 +14,9 @@ class StickerController extends Controller
      */
     public function index()
     {
-        return view ('stickers.index');
+        $stickers = Sticker::all();
+
+        return view('stickers.index', compact('stickers'));
     }
 
     /**
@@ -23,7 +26,7 @@ class StickerController extends Controller
      */
     public function create()
     {
-        return view ('stickers.create');
+        return view('stickers.create');
     }
 
     /**
@@ -34,7 +37,13 @@ class StickerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
+       $stickers = Sticker::Create($request->all());
+
+       return redirect('/stickers/' . $stickers->id);
     }
 
     /**
@@ -43,14 +52,9 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Sticker $stickers)
     {
-        // get the sticker
-        $sticker = stickers::find($id);
-
-        // show the view and pass the sticker to it
-        return View::make('stickers.show')
-            ->with('stickers', $sticker);
+        return view('stickers.show', compact('stickers'));
     }
 
     /**
@@ -59,9 +63,9 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Sticker $stickers)
     {
-        //
+        return view('stickers.edit', compact('stickers'));
     }
 
     /**
@@ -71,9 +75,11 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sticker $stickers)
     {
-        //
+        $stickers->update($request->all());
+
+        return redirect('/stickers/'. $stickers->id);
     }
 
     /**
@@ -84,6 +90,8 @@ class StickerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stickers->delete();
+
+        return redirect ('/stickers/');
     }
 }

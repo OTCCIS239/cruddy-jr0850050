@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Clothes;
 
-class ClothingController extends Controller
+class clothingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class ClothingController extends Controller
      */
     public function index()
     {
-        return view ('clothing.index');
+        $clothing = Clothes::all();
+
+        return view('clothing.index', compact('clothing'));
     }
 
     /**
@@ -23,7 +26,7 @@ class ClothingController extends Controller
      */
     public function create()
     {
-        return view ('clothing.create');
+        return view('clothing.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class ClothingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'size' => 'required',
+            'type' => 'required',
+        ]);
+
+       $clothing = Clothes::Create($request->all());
+
+       return redirect('/clothing/' . $clothing->id);
     }
 
     /**
@@ -43,14 +53,9 @@ class ClothingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Clothes $clothing)
     {
-        // get the clothing
-        $clothing = clothing::find($id);
-
-        // show the view and pass the clothing to it
-        return View::make('clothing.show')
-            ->with('clothing', $clothing);
+        return view('clothing.show', compact('clothing'));
     }
 
     /**
@@ -59,9 +64,9 @@ class ClothingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Clothes $clothing)
     {
-        //
+        return view('clothing.edit', compact('clothing'));
     }
 
     /**
@@ -71,9 +76,11 @@ class ClothingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Clothes $clothing)
     {
-        //
+        $clothing->update($request->all());
+
+        return redirect('/clothing/'. $clothing->id);
     }
 
     /**
@@ -84,6 +91,8 @@ class ClothingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $clothing->delete();
+
+        return redirect ('/clothing/');
     }
 }

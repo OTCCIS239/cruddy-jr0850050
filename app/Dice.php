@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sticker extends Model
+class Dice extends Model
 {
     protected $fillable = [
         'name',
-        'artist',
+        'size',
+        'material',
         'description',
         'price',
     ];

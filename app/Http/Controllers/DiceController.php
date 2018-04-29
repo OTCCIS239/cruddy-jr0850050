@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Dice;
 
 class DiceController extends Controller
 {
@@ -13,7 +14,9 @@ class DiceController extends Controller
      */
     public function index()
     {
-        return view ('dice.index');
+        $dice = Dice::all();
+
+        return view('dice.index', compact('dice'));
     }
 
     /**
@@ -23,7 +26,7 @@ class DiceController extends Controller
      */
     public function create()
     {
-        return view ('dice.create');
+        return view('dice.create');
     }
 
     /**
@@ -34,7 +37,13 @@ class DiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'size' => 'required',
+        ]);
+
+       $dice = Dice::Create($request->all());
+
+       return redirect('/dice/' . $dice->id);
     }
 
     /**
@@ -43,14 +52,9 @@ class DiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dice $dice)
     {
-        // get the dice
-        $dice = dice::find($id);
-
-        // show the view and pass the dice to it
-        return View::make('dice.show')
-            ->with('dice', $dice);
+        return view('dice.show', compact('dice'));
     }
 
     /**
@@ -59,9 +63,9 @@ class DiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dice $dice)
     {
-        //
+        return view('dice.edit', compact('dice'));
     }
 
     /**
@@ -71,9 +75,11 @@ class DiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dice $dice)
     {
-        //
+        $dice->update($request->all());
+
+        return redirect('/dice/'. $dice->id);
     }
 
     /**
@@ -84,6 +90,8 @@ class DiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dice->delete();
+
+        return redirect ('/dice/');
     }
 }

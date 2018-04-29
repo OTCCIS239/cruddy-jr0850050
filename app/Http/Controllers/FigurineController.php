@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Figure;
 
 class FigurineController extends Controller
 {
@@ -13,7 +14,9 @@ class FigurineController extends Controller
      */
     public function index()
     {
-        return view ('figurines.index');
+        $figurines = Figure::all();
+
+        return view('figurine.index', compact('figurines'));
     }
 
     /**
@@ -23,7 +26,7 @@ class FigurineController extends Controller
      */
     public function create()
     {
-        return view ('figurines.create');
+        return view('figurine.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class FigurineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'race' => 'required',
+            'class' => 'required',
+        ]);
+
+       $figurines = Figure::Create($request->all());
+
+       return redirect('/figurine/' . $figurines->id);
     }
 
     /**
@@ -43,14 +53,9 @@ class FigurineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Figure $figurines)
     {
-        // get the figurine
-        $figurine = figurine::find($id);
-
-        // show the view and pass the figurine to it
-        return View::make('figurine.show')
-            ->with('figurine', $figurine);
+        return view('figurine.show', compact('figurines'));
     }
 
     /**
@@ -59,9 +64,9 @@ class FigurineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Figure $figurines)
     {
-        //
+        return view('figurine.edit', compact('figurines'));
     }
 
     /**
@@ -71,9 +76,11 @@ class FigurineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Figure $figurines)
     {
-        //
+        $figurines->update($request->all());
+
+        return redirect('/figurine/'. $figurines->id);
     }
 
     /**
@@ -84,6 +91,8 @@ class FigurineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $figurines->delete();
+
+        return redirect ('/figurine/');
     }
 }
