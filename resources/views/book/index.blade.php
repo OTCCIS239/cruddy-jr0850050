@@ -23,7 +23,7 @@ Copyright 2018
 
               <div class="panel">
         <div class="panel-heading">
-            <a href="/books/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <a href="/book/create" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i>create</a>
         </div>
         <table class="table table-striped table-hover">
             <thead>
@@ -47,7 +47,7 @@ Copyright 2018
                         <td>{{ $book->description }}</td>
                         <td>{{ $book->price }}</td>
                         <td>
-                            <a href="/book/{{ $book->id }}/edit" class="btn btn-xs btn-info">
+                            <a href="/book/{{ $book->id }}/edit" class="btn btn-sm btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>

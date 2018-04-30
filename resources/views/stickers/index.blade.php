@@ -23,7 +23,7 @@ Copyright 2018
 
               <div class="panel">
         <div class="panel-heading">
-            <a href="/stickers/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <a href="/stickers/create" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i></a>
         </div>
         <table class="table table-striped table-hover">
             <thead>
@@ -47,7 +47,7 @@ Copyright 2018
                         <td>{{ $sticker->description }}</td>
                         <td>{{ $sticker->price }}</td>
                         <td>
-                            <a href="/stickers/{{ $sticker->id }}/edit" class="btn btn-xs btn-info">
+                            <a href="/stickers/{{ $sticker->id }}/edit" class="btn btn-sm btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>

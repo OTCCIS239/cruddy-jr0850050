@@ -16,7 +16,7 @@ class FigurineController extends Controller
     {
         $figurines = Figure::all();
 
-        return view('figurine.index', compact('figurines'));
+        return view('figurines.index', compact('figurines'));
     }
 
     /**
@@ -26,7 +26,7 @@ class FigurineController extends Controller
      */
     public function create()
     {
-        return view('figurine.create');
+        return view('figurines.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class FigurineController extends Controller
 
        $figurines = Figure::Create($request->all());
 
-       return redirect('/figurine/' . $figurines->id);
+       return redirect('/figurines/' . $figurines->id);
     }
 
     /**
@@ -55,7 +55,7 @@ class FigurineController extends Controller
      */
     public function show(Figure $figurines)
     {
-        return view('figurine.show', compact('figurines'));
+        return view('figurines.show', compact('figurines'));
     }
 
     /**
@@ -66,7 +66,7 @@ class FigurineController extends Controller
      */
     public function edit(Figure $figurines)
     {
-        return view('figurine.edit', compact('figurines'));
+        return view('figurines.edit', compact('figurines'));
     }
 
     /**
@@ -80,7 +80,7 @@ class FigurineController extends Controller
     {
         $figurines->update($request->all());
 
-        return redirect('/figurine/'. $figurines->id);
+        return redirect('/figurines/'. $figurines->id);
     }
 
     /**
@@ -93,6 +93,6 @@ class FigurineController extends Controller
     {
         $figurines->delete();
 
-        return redirect ('/figurine/');
+        return redirect ('/figurines/');
     }
 }

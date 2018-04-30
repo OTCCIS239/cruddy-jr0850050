@@ -23,7 +23,7 @@ Copyright 2018
 
               <div class="panel">
         <div class="panel-heading">
-            <a href="/figurines/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <a href="/figurines/create" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i>create</a>
         </div>
         <table class="table table-striped table-hover">
             <thead>
@@ -47,7 +47,7 @@ Copyright 2018
                         <td>{{ $figurine->material }}</td>
                         <td>{{ $figurine->description }}</td>
                         <td>
-                            <a href="/figurines/{{ $figurine->id }}/edit" class="btn btn-xs btn-info">
+                            <a href="/figurines/{{ $figurine->id }}/edit" class="btn btn-sm btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>

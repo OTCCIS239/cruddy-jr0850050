@@ -15,8 +15,8 @@ Copyright 2018
              <li class="nav-item @if(Route::is('home')) active @endif"> 
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
             </li>
-            <li class="nav-item @if(Route::is('figurine.*')) active @endif">
-                <a class="nav-link" href="{{ route('figurine.index') }}">Figurines</a>
+            <li class="nav-item @if(Route::is('figurines.*')) active @endif">
+                <a class="nav-link" href="{{ route('figurines.index') }}">Figurines</a>
             </li>
             <li class="nav-item @if(Route::is('book.*')) active @endif">
                 <a href="{{ route('book.index') }}" class="nav-link">Books</a>

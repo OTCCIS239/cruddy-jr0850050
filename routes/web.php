@@ -16,7 +16,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('dice', 'DiceController');
-Route::resource('figurine', 'FigurineController');
+Route::resource('figurines', 'FigurineController');
 Route::resource('book', 'BookController');
 Route::resource('clothing', 'ClothingController');
 Route::resource('stickers', 'StickerController');

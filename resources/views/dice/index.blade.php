@@ -23,7 +23,7 @@ Copyright 2018
 
        <div class="panel">
         <div class="panel-heading">
-            <a href="/guitars/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <a href="/dice/create" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i>create</a>
         </div>
         <table class="table table-striped table-hover">
             <thead>
@@ -47,7 +47,7 @@ Copyright 2018
                         <td>{{ $dice->description }}</td>
                         <td>{{ $dice->price }}</td>
                         <td>
-                            <a href="/dice/{{ $dice->id }}/edit" class="btn btn-xs btn-info">
+                            <a href="/dice/{{ $dice->id }}/edit" class="btn btn-sm btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>

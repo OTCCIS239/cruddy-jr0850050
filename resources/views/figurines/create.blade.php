@@ -1,5 +1,5 @@
 <!-- *******************************
-Page: Figurines Create page!
+Page: figurines Create page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
@@ -7,7 +7,7 @@ Copyright 2018
 @extends('layouts.app')
 
 @section('content')
-<h1>ADMIN: Add a Figurine!</h1>
+<h1>ADMIN: Add a figurine!</h1>
 
         <style type="text/css">
         #link-container {
@@ -26,8 +26,8 @@ Copyright 2018
         <h3 class="panel-title">Create item</h3>
     </div>
     <div class="panel-body">
-        <form action="/figurines/{{ $figurine->id }}" method="post">
-            <input type="hidden" name="_method" value="PATCH">
+        <form action="/figurines" method="post">
+            <input type="hidden" name="_method" value="post">
             {{ csrf_field() }}
             
                 <div class="form-group">
