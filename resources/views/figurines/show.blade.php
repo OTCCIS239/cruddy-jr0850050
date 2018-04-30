@@ -9,9 +9,9 @@ Copyright 2018
 @section('content')
 <h1>Showing Figurine</h1>
 
-{{ $figurines->toJson() }}
+{{ $figurine->toJson() }}
 
-<form action="/figurines/{{ $figurines->id }}" method="post">
+<form action="/figurines/{{ $figurine->id }}" method="post">
  <input type="hidden" name="_method" value="delete">
  {{ csrf_field() }}
 

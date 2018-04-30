@@ -26,8 +26,8 @@ Copyright 2018
         <h3 class="panel-title">Create item</h3>
     </div>
     <div class="panel-body">
-        <form action="/stickers/{{ $sticker->id }}" method="post">
-            <input type="hidden" name="_method" value="PATCH">
+        <form action="/stickers" method="post">
+            <input type="hidden" name="_method" value="post">
             {{ csrf_field() }}
             
                 <div class="form-group">

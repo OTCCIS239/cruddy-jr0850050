@@ -14,9 +14,9 @@ class FigurineController extends Controller
      */
     public function index()
     {
-        $figurines = Figure::all();
+        $figurine = Figure::all();
 
-        return view('figurines.index', compact('figurines'));
+        return view('figurines.index', compact('figurine'));
     }
 
     /**
@@ -42,9 +42,9 @@ class FigurineController extends Controller
             'class' => 'required',
         ]);
 
-       $figurines = Figure::Create($request->all());
+       $figurine = Figure::Create($request->all());
 
-       return redirect('/figurines/' . $figurines->id);
+       return redirect('/figurines/' . $figurine->id);
     }
 
     /**
@@ -53,9 +53,9 @@ class FigurineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Figure $figurines)
+    public function show(Figure $figurine)
     {
-        return view('figurines.show', compact('figurines'));
+        return view('figurines.show', compact('figurine'));
     }
 
     /**
@@ -64,9 +64,9 @@ class FigurineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Figure $figurines)
+    public function edit(Figure $figurine)
     {
-        return view('figurines.edit', compact('figurines'));
+        return view('figurines.edit', compact('figurine'));
     }
 
     /**
@@ -76,11 +76,11 @@ class FigurineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Figure $figurines)
+    public function update(Request $request, Figure $figurine)
     {
-        $figurines->update($request->all());
+        $figurine->update($request->all());
 
-        return redirect('/figurines/'. $figurines->id);
+        return redirect('/figurines/'. $figurine->id);
     }
 
     /**
@@ -91,7 +91,7 @@ class FigurineController extends Controller
      */
     public function destroy($id)
     {
-        $figurines->delete();
+        $figurine->delete();
 
         return redirect ('/figurines/');
     }
