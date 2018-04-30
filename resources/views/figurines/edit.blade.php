@@ -1,5 +1,5 @@
 <!-- *******************************
-Page: Figurines page!
+Page: figurines page!
 Author: Joshua Ratliff
 Date of Creation: 04/07/2018
 Copyright 2018
@@ -25,33 +25,33 @@ Copyright 2018
         <h3 class="panel-title">Edit item</h3>
     </div>
     <div class="panel-body">
-        <form action="/figurines/{{ $figurine->id }}" method="post">
+        <form action="/figurines{{ $figurines->id }}" method="post">
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             
                 <div class="form-group">
                     <label for="race">Race</label>
-                    <input type="text" name="race" value="{{ @$figurine ? $figurine->race : '' }}" class="form-control">
+                    <input type="text" name="race" value="{{ @$figurines ? $figurines->race : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="class">Class</label>
-                    <input type="text" name="class" value="{{ @$figurine ? $figurine->class : '' }}" class="form-control">
+                    <input type="text" name="class" value="{{ @$figurines ? $figurines->class : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="material">Material</label>
-                    <input type="text" name="material" value="{{ @$figurine ? $figurine->material : '' }}" class="form-control">
+                    <input type="text" name="material" value="{{ @$figurines ? $figurines->material : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" name="description" value="{{ @$figurine ? $figurine->description : '' }}" class="form-control">
+                    <input type="text" name="description" value="{{ @$figurines ? $figurines->description : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="price">List Price</label>
-                    <input type="number" name="price" value="{{ @$figurine ? $figurine->price : '' }}" class="form-control">
+                    <input type="number" name="price" value="{{ @$figurines ? $figurines->price : '' }}" class="form-control">
                 </div>
 
             <button class="btn btn-primary pull-right">Save item</button>
