@@ -91,7 +91,7 @@ class FigurineController extends Controller
      */
     public function destroy($id)
     {
-        $figurine->delete();
+        $id->delete();
 
         return redirect ('/figurines/');
     }
