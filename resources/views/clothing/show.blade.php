@@ -9,9 +9,9 @@ Copyright 2018
 @section('content')
 <h1>Showing clothes</h1>
 
-{{ $clothes->toJson() }}
+{{ $clothing->toJson() }}
 
-<form action="/clothing/{{ $clothes->id }}" method="post">
+<form action="/clothing/{{ $clothing->id }}" method="post">
  <input type="hidden" name="_method" value="delete">
  {{ csrf_field() }}
 

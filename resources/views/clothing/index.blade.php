@@ -29,9 +29,11 @@ Copyright 2018
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Race</th>
-                    <th>Class</th>
-                    <th>Material</th>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Brand</th>
+                    <th>Type</th>
+                    <th>Description</th>
                     <th>Price</th>
                     <th style="width: 1px; white-space: nowrap;">
                         <i class="fa fa-cog"></i>
@@ -39,15 +41,17 @@ Copyright 2018
                 </tr>
             </thead>
             <tbody>
-                @foreach($clothing as $clothes)
+                @foreach($clothing as $clothing)
                     <tr>
-                        <td>{{ $clothes->id }}</td>
-                        <td>{{ $clothes->race }}</td>
-                        <td>{{ $clothes->class }}</td>
-                        <td>{{ $clothes->material }}</td>
-                        <td>{{ $clothes->description }}</td>
+                        <td>{{ $clothing->id }}</td>
+                        <td>{{ $clothing->name }}</td>
+                        <td>{{ $clothing->size }}</td>
+                        <td>{{ $clothing->brand }}</td>
+                        <td>{{ $clothing->type }}</td>
+                        <td>{{ $clothing->description }}</td>
+                        <td>{{ $clothing->price }}</td>
                         <td>
-                            <a href="/clothing/{{ $clothes->id }}/edit" class="btn btn-sm btn-info">
+                            <a href="/clothing/{{ $clothing->id }}/edit" class="btn btn-sm btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>
