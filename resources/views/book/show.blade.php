@@ -11,7 +11,7 @@ Copyright 2018
 
 {{ $book->toJson() }}
 
-<form action="/book/{{ $book->id }}" method="post">
+<form action="/book{{ $book->id }}" method="post">
  <input type="hidden" name="_method" value="delete">
  {{ csrf_field() }}
 

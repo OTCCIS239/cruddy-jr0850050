@@ -39,7 +39,7 @@ Copyright 2018
                 </tr>
             </thead>
             <tbody>
-                @foreach($books as $book)
+                @foreach($book as $book)
                     <tr>
                         <td>{{ $book->id }}</td>
                         <td>{{ $book->name }}</td>

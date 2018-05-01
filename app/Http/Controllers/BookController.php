@@ -17,9 +17,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $book = Book::all();
 
-        return view('Book.index', compact('books'));
+        return view('book.index', compact('book'));
     }
 
     /**
@@ -29,7 +29,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('Book.create');
+        return view('book.create');
     }
 
     /**
@@ -44,9 +44,9 @@ class BookController extends Controller
             'name' => 'required',
         ]);
 
-       $books = Book::Create($request->all());
+       $book = Book::Create($request->all());
 
-       return redirect('/Book/' . $books->id);
+       return redirect('/book/' . $book->id);
     }
 
     /**
@@ -55,9 +55,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $books)
+    public function show(Book $book)
     {
-        return view('Book.show', compact('books'));
+        return view('book.show', compact('book'));
     }
 
     /**
@@ -66,9 +66,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $books)
+    public function edit(Book $book)
     {
-        return view('Book.edit', compact('books'));
+        return view('book.edit', compact('book'));
     }
 
     /**
@@ -78,11 +78,11 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $books)
+    public function update(Request $request, Book $book)
     {
-        $books->update($request->all());
+        $book->update($request->all());
 
-        return redirect('/Book/'. $books->id);
+        return redirect('/book/' . $book->id);
     }
 
     /**
@@ -93,8 +93,8 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $books->delete();
+        $book->delete();
 
-        return redirect ('/Book/');
+        return redirect ('/book/');
     }
 }

@@ -25,28 +25,28 @@ Copyright 2018
         <h3 class="panel-title">Edit item</h3>
     </div>
     <div class="panel-body">
-        <form action="/book{{ $books->id }}" method="post">
+        <form action="/book/{{ $book->id }}" method="post">
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" value="{{ @$books ? $books->name : '' }}" class="form-control">
+                    <input type="text" name="name" value="{{ @$book ? $book->name : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="type">Type</label>
-                    <input type="text" name="type" value="{{ @$books ? $books->type : '' }}" class="form-control">
+                    <input type="text" name="type" value="{{ @$book ? $book->type : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" name="description" value="{{ @$books ? $books->description : '' }}" class="form-control">
+                    <input type="text" name="description" value="{{ @$book ? $book->description : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="price">List Price</label>
-                    <input type="number" name="price" value="{{ @$books ? $books->price : '' }}" class="form-control">
+                    <input type="number" name="price" value="{{ @$book ? $book->price : '' }}" class="form-control">
                 </div>
 
             <button class="btn btn-primary pull-right">Save item</button>
