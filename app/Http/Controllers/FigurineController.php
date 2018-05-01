@@ -80,7 +80,7 @@ class FigurineController extends Controller
     {
         $figurine->update($request->all());
 
-        return redirect('/figurines/'. $figurine->id);
+        return redirect('/figurines/' . $figurine->id);
     }
 
     /**

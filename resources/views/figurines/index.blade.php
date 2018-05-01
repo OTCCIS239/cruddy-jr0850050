@@ -39,7 +39,7 @@ Copyright 2018
                 </tr>
             </thead>
             <tbody>
-                @foreach($figurines as $figurine)
+                @foreach($figurine as $figurine)
                     <tr>
                         <td>{{ $figurine->id }}</td>
                         <td>{{ $figurine->race }}</td>

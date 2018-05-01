@@ -25,7 +25,7 @@ Copyright 2018
         <h3 class="panel-title">Edit item</h3>
     </div>
     <div class="panel-body">
-        <form action="/figurines{{ $figurine->id }}" method="post">
+        <form action="/figurines/{{ $figurine->id }}" method="post">
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             
