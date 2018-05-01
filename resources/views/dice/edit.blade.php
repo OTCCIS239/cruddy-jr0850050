@@ -48,6 +48,11 @@ Copyright 2018
                 </div>
 
                 <div class="form-group">
+                    <label for="size">Number of faces</label>
+                    <input type="number" name="size" value="{{ @$dice ? $dice->size : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
                     <label for="material">Material</label>
                     <input type="text" name="material" value="{{ @$dice ? $dice->material : '' }}" class="form-control">
                 </div>

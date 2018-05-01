@@ -40,11 +40,16 @@ Copyright 2018
     <div class="panel-body">
     <form action="/dice/" method="post">
            <input type="hidden" name="_method" value="post">
-           {{ csrf_field() }} }}
+           {{ csrf_field() }}
             
                 <div class="form-group">
                     <label for="name">Dice name</label>
                     <input type="text" name="name" value="{{ @$dice ? $dice->name : '' }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="size">Number of faces</label>
+                    <input type="number" name="size" value="{{ @$dice ? $dice->size : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">

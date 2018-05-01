@@ -28,7 +28,8 @@ Copyright 2018
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>name</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>Number of Faces</th>
                     <th>Material</th>
                     <th>Description</th>
@@ -43,6 +44,7 @@ Copyright 2018
                     <tr>
                         <td>{{ $dice->id }}</td>
                         <td>{{ $dice->name }}</td>
+                        <td>{{ $dice->size }}</td>
                         <td>{{ $dice->material }}</td>
                         <td>{{ $dice->description }}</td>
                         <td>{{ $dice->price }}</td>
