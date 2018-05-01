@@ -38,7 +38,7 @@ Copyright 2018
         <h3 class="panel-title">Create item</h3>
     </div>
     <div class="panel-body">
-    <form action="/dice/" method="post">
+    <form action="/dice" method="post">
            <input type="hidden" name="_method" value="post">
            {{ csrf_field() }}
             
