@@ -37,9 +37,9 @@ class DiceController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        /* $this->validate($request, [
             'size' => 'required',
-        ]);
+        ]); */
 
        $dice = Dice::Create($request->all());
 

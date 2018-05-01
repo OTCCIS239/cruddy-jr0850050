@@ -38,7 +38,7 @@ class StickerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
         ]);
 
        $sticker = Sticker::Create($request->all());

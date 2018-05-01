@@ -40,9 +40,9 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        /* $this->validate($request, [
             'name' => 'required',
-        ]);
+        ]); */
 
        $book = Book::Create($request->all());
 
