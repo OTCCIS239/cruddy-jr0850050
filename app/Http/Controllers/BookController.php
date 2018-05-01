@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 
-//im concerned about this controller working because the view was originally advbooks, but ive renamed it to books because
-//there can be more than adventure paths.
-
 class BookController extends Controller
 {
     /**
