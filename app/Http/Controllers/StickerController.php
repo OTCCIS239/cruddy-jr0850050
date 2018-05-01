@@ -88,9 +88,9 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Figure $figurine)
     {
-        $id->delete();
+        $figurine->delete();
 
         return redirect ('/stickers/');
     }
