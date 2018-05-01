@@ -23,7 +23,7 @@ Copyright 2018
 
               <div class="panel">
         <div class="panel-heading">
-            <a href="/stickers/create" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <a href="/stickers/create" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i>create</a>
         </div>
         <table class="table table-striped table-hover">
             <thead>
@@ -39,7 +39,7 @@ Copyright 2018
                 </tr>
             </thead>
             <tbody>
-                @foreach($stickers as $sticker)
+                @foreach($sticker as $sticker)
                     <tr>
                         <td>{{ $sticker->id }}</td>
                         <td>{{ $sticker->name }}</td>

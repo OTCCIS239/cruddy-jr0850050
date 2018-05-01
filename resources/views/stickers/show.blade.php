@@ -9,9 +9,9 @@ Copyright 2018
 @section('content')
 <h1>Showing stickers</h1>
 
-{{ $stickers->toJson() }}
+{{ $sticker->toJson() }}
 
-<form action="/stickers/{{ $stickers->id }}" method="post">
+<form action="/stickers/{{ $sticker->id }}" method="post">
  <input type="hidden" name="_method" value="delete">
  {{ csrf_field() }}
 

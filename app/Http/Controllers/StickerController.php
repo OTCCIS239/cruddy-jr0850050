@@ -14,9 +14,9 @@ class StickerController extends Controller
      */
     public function index()
     {
-        $stickers = Sticker::all();
+        $sticker = Sticker::all();
 
-        return view('stickers.index', compact('stickers'));
+        return view('stickers.index', compact('sticker'));
     }
 
     /**
@@ -41,9 +41,9 @@ class StickerController extends Controller
             'name' => 'required',
         ]);
 
-       $stickers = Sticker::Create($request->all());
+       $sticker = Sticker::Create($request->all());
 
-       return redirect('/stickers/' . $stickers->id);
+       return redirect('/stickers/' . $sticker->id);
     }
 
     /**
@@ -52,9 +52,9 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Sticker $stickers)
+    public function show(Sticker $sticker)
     {
-        return view('stickers.show', compact('stickers'));
+        return view('stickers.show', compact('sticker'));
     }
 
     /**
@@ -63,9 +63,9 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sticker $stickers)
+    public function edit(Sticker $sticker)
     {
-        return view('stickers.edit', compact('stickers'));
+        return view('stickers.edit', compact('sticker'));
     }
 
     /**
@@ -75,11 +75,11 @@ class StickerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sticker $stickers)
+    public function update(Request $request, Sticker $sticker)
     {
-        $stickers->update($request->all());
+        $sticker->update($request->all());
 
-        return redirect('/stickers/'. $stickers->id);
+        return redirect('/stickers/'. $sticker->id);
     }
 
     /**
@@ -90,7 +90,7 @@ class StickerController extends Controller
      */
     public function destroy($id)
     {
-        $stickers->delete();
+        $id->delete();
 
         return redirect ('/stickers/');
     }
